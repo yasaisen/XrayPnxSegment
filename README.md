@@ -75,6 +75,41 @@ predict_and_visualize(
 )
 ```
 
+## Data Source
+
+This project relies on the **Chest X-Ray Images with Pneumothorax Masks** dataset  
+(<https://www.kaggle.com/datasets/vbookshelf/pneumothorax-chest-xray-images-and-masks>),  
+published on Kaggle by user **vbookshelf**.  
+The dataset is a PNG-converted and folder-reorganised version of the original
+**SIIM-ACR Pneumothorax Segmentation Challenge** data  
+(<https://www.kaggle.com/c/siim-acr-pneumothorax-segmentation>) released in 2019.
+
+> **Size & contents** 12 047 CXR images (PNG) and 12 047 binary masks  
+> **Pre-processing** DICOM → PNG conversion, filename normalisation, no extra annotation  
+> **Download** Please obtain the data directly from Kaggle and place it under `data/raw/`  
+> **Redistribution** This repository does *not* bundle the raw images or masks.
+
+### Citation
+
+If you use the dataset in academic work, please cite *both* sources:
+
+```bibtex
+@misc{siim-acr-pneumothorax-segmentation,
+    author = {Anna Zawacki and Carol Wu and George Shih and Julia Elliott and Mikhail Fomitchev and Mohannad Hussain and ParasLakhani and Phil Culliton and Shunxing Bao},
+    title = {SIIM-ACR Pneumothorax Segmentation},
+    year = {2019},
+    howpublished = {\url{https://kaggle.com/competitions/siim-acr-pneumothorax-segmentation}},
+    note = {Kaggle}
+}
+
+@dataset{vbookshelf_pneumothorax_masks_2019,
+  title  = {Chest X-Ray Images with Pneumothorax Masks},
+  author = {vbookshelf},
+  year   = {2019},
+  url    = {https://www.kaggle.com/datasets/vbookshelf/pneumothorax-chest-xray-images-and-masks},
+  note   = {Processed PNG version of the SIIM-ACR challenge dataset}
+}
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
