@@ -100,6 +100,7 @@ def plot_training_comparison(
 def predict_and_visualize(
     model, 
     image_path, 
+    mask_path,
     device, 
     transform=None
 ):
@@ -107,9 +108,10 @@ def predict_and_visualize(
     
     image = cv2.imread(image_path)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-    original_image = image.copy()
+    mask = cv2.imread(mask_path, cv2.IMREAD_GRAYSCALE)
     
-    image = cv2.resize(image, (768, 768))
+    image = cv2.resize(image, (768, 768), interpolation=cv2.INTER_NEAREST)
+    mask = cv2.resize(mask, (768, 768), interpolation=cv2.INTER_NEAREST)
     
     if transform:
         augmented = transform(image=image)
@@ -129,23 +131,18 @@ def predict_and_visualize(
     
     fig, axes = plt.subplots(1, 3, figsize=(15, 5))
     
-    axes[0].imshow(original_image)
-    axes[0].set_title('Original Image')
-    axes[0].axis('off')
+    axes[0].imshow(image)
+    axes[0].set_title('image')
     
-    axes[1].imshow(image)
-    axes[1].set_title('Resized Input')
-    axes[1].axis('off')
+    axes[1].imshow(pred_mask, cmap='gray')
+    axes[1].set_title('predicted Mask')
     
-    axes[2].imshow(pred_mask, cmap='gray')
-    axes[2].set_title('Predicted Mask')
-    axes[2].axis('off')
+    axes[2].imshow(mask, cmap='gray')
+    axes[2].set_title('groundtruth')
     
     plt.tight_layout()
     plt.show()
     
-    return pred_mask
-
 
 
 

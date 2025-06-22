@@ -35,8 +35,8 @@ CONFIG = {
     'skip_has_pnx': True,             # Skip samples with 'has_pnx' set to False
     'calc_class_weights': True,       # Calculate class weights based on dataset
     'criterion': 'combined',          # 'BCE', 'combined'
-    'root_path': '/home/yasaisen/Desktop/250610', # os.getcwd(),
-    'root_path': '/home/yasaisen/Desktop/250610', # os.getcwd(),
+    'root_path': os.getcwd(),
+    # 'root_path': '/home/yasaisen/Desktop/250610',
     'meta_path': 'data_2506201607.json',
     'save_path': os.path.join(os.getcwd(), 'checkpoints', datetime.now().strftime("%y%m%d%H%M")),
     'device': 'cuda' if torch.cuda.is_available() else 'cpu',

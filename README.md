@@ -47,12 +47,23 @@ Model checkpoints and training history will be saved under `checkpoints/`.
 After training, you can visualize predictions using the `predict_and_visualize` function in `XrayPnxSegment/common/utils.py`:
 
 ```python
+import torch
 from XrayPnxSegment.common.utils import predict_and_visualize
+from XrayPnxSegment.processors.img_processor import get_transform
 from XrayPnxSegment.models.modeling_segModels import get_DeepLabV3Plus
+
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 model = get_DeepLabV3Plus()
 model.load_state_dict(torch.load('path/to/model.pth')['model_state_dict'])
-predict_and_visualize(model, 'example.png', device='cuda')
+
+predict_and_visualize(
+    model=model, 
+    image_path='path/to/example.png', 
+    mask_path='path/to/groundtruth.png', 
+    device=device, 
+    transform=get_transform()[1], 
+)
 ```
 
 ## Project structure
