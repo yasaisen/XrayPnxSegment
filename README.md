@@ -53,7 +53,7 @@ Model checkpoints and training history will be saved under `checkpoints/`.
 
 ## Inference example
 
-After training, you can visualize predictions using the `predict_and_visualize` function in `XrayPnxSegment/common/utils.py`:
+After training, you can visualize predictions using the `predict_and_visualize` function:
 
 ```python
 import torch
