@@ -3,12 +3,16 @@ Perform image segmentation on chest X-ray to obtain the scope of pneumothorax le
 
 XrayPnxSegment provides a training pipeline for segmenting pneumothorax lesions from chest X-ray images. It contains scripts for preparing the dataset, defining neural network models, and training either **DeepLabV3+** or **U-Net** architectures using PyTorch.
 
-## Features
+## Project structure
 
-- Dataset preparation utilities for cropping and sampling images
-- Data loaders with `albumentations` based augmentations
-- Ready-made model builders for DeepLabV3+ and U-Net
-- Training routine with configurable loss functions and metrics
+```
+XrayPnxSegment/
+├── common/         # Utility functions
+├── datasets/       # Dataset classes and helpers
+├── models/         # Model definitions
+├── processors/     # Data augmentation pipeline
+└── trainer/        # Training loops and loss functions
+```
 
 ## Installation
 1. Create a Python environment (tested with Python 3.10):
@@ -69,17 +73,6 @@ predict_and_visualize(
     device=device, 
     transform=get_transform()[1], 
 )
-```
-
-## Project structure
-
-```
-XrayPnxSegment/
-├── common/         # Utility functions
-├── datasets/       # Dataset classes and helpers
-├── models/         # Model definitions
-├── processors/     # Data augmentation pipeline
-└── trainer/        # Training loops and loss functions
 ```
 
 ## License
