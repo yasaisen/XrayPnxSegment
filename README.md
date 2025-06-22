@@ -86,7 +86,7 @@ The dataset is a PNG-converted and folder-reorganised version of the original
 
 > **Size & contents** 12 047 CXR images (PNG) and 12 047 binary masks  
 > **Pre-processing** DICOM → PNG conversion, filename normalisation, no extra annotation  
-> **Download** Please obtain the data directly from Kaggle and place it under `root_path` in the `CONFIG` dictionary.  
+> **Download** Please obtain the data directly from Kaggle and place it under the `root_path` in your `CONFIG` dictionary from `train.py`.  
 > **Redistribution** This repository does *not* bundle the raw images or masks.
 
 ### Citation
