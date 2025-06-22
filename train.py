@@ -13,10 +13,7 @@ import os
 from datetime import datetime
 from torch.utils.data import DataLoader
 
-from XrayPnxSegment.common.utils import (
-    plot_training_comparison, 
-    predict_and_visualize, 
-)
+from XrayPnxSegment.common.utils import plot_training_comparison
 from XrayPnxSegment.datasets.pnxImgSegSet import pnxImgSegSet, validate_dataset
 from XrayPnxSegment.models.modeling_segModels import (
     get_DeepLabV3Plus, 

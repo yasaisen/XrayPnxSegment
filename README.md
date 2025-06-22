@@ -10,17 +10,22 @@ XrayPnxSegment provides a training pipeline for segmenting pneumothorax lesions 
 - Ready-made model builders for DeepLabV3+ and U-Net
 - Training routine with configurable loss functions and metrics
 
-## Requirements
-
-The codebase relies on Python 3 with the following libraries (incomplete list):
-
-- `torch`
-- `torchvision`
-- `segmentation_models_pytorch`
-- `albumentations`
-- `opencv-python`
-
-Install the dependencies with `pip` before running the scripts.
+## Installation
+1. Create a Python environment (tested with Python 3.10):
+   ```bash
+   conda create --name classMAI python=3.10
+   conda activate classMAI
+   ```
+2. Clone the repository:
+   ```bash
+   git clone https://github.com/yasaisen/XrayPnxSegment.git
+   cd XrayPnxSegment
+   ```
+3. Install the dependencies:
+   ```bash
+   pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https://download.pytorch.org/whl/cu121
+   pip install matplotlib scikit-learn pandas tqdm opencv-python segmentation-models-pytorch albumentations
+   ```
 
 ## Dataset preparation
 
