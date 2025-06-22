@@ -49,7 +49,7 @@ Modify the constants at the top of the script to point to your dataset directory
 python train.py
 ```
 
-Model checkpoints and training history will be saved under `checkpoints/`.
+Model checkpoints and training history will be saved under `checkpoints/<timestamp>/`.
 
 ## Inference example
 
