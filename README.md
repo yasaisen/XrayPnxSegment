@@ -109,6 +109,7 @@ If you use the dataset in academic work, please cite *both* sources:
   url    = {https://www.kaggle.com/datasets/vbookshelf/pneumothorax-chest-xray-images-and-masks},
   note   = {Processed PNG version of the SIIM-ACR challenge dataset}
 }
+```
 
 ## License
 
